@@ -65,7 +65,7 @@ describe('Test POST /cupcake endpoint', function() {
         const cupcakeId = response.body.cupcakeId
 
         // cleanup
-        deleteCupcakeById(cupcakeId)
+        await deleteCupcakeById(cupcakeId)
 
     })
 
@@ -120,8 +120,8 @@ describe('TEST GET /cucpake endpoint', function() {
         expect(getResponse.body).toHaveLength(2)        
 
         // cleanup
-        deleteCupcakeById(firstCupcakeId)
-        deleteCupcakeById(secondCupcakeId)
+        await deleteCupcakeById(firstCupcakeId)
+        await deleteCupcakeById(secondCupcakeId)
         
     })
 })
@@ -158,7 +158,7 @@ describe('TEST GET /cupcake/:cupcakeId endpoint', function() {
         expect(response.body).toMatchObject(CUPCAKE_BODY)
 
         // cleanup
-        deleteCupcakeById(cupcakeId)
+        await deleteCupcakeById(cupcakeId)
 
     })
 
@@ -203,7 +203,7 @@ describe('TEST PUT /cupcake/:cupcakeId endpoint', function() {
         expect(response.body.name).toBe('New cupcake name')
 
         // cleanup
-        deleteCupcakeById(cupcakeId)
+        await deleteCupcakeById(cupcakeId)
     })
 })
 

@@ -88,6 +88,6 @@ export async function deleteCupcakeById(id: number) {
     }
 }
 
-export async function listAllCupcakes() : Promise<Cupcakes> {
+export async function listAllCupcakes() : Promise<Cupcake[]> {
     return Object.values(cupcakes)
 }
